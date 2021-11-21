@@ -53,6 +53,8 @@
 			<ul class="nav navbar-nav">
 				<li><a href="main.jsp">메인</a></li>
 				<li class="active"><a href="bbs.jsp">게시판</a></li>
+				<li><a href="https://lms.sungshin.ac.kr/ilos/main/main_form.acl">교육시스템</a></li>
+				<li><a href="https://portal.sungshin.ac.kr/sso/login.jsp?destination=/portal/ssu/stuMain">포탈시스템</a></li>
 			</ul>
 			<%
 				// 로그인 하지 않았을 때 보여지는 화면
