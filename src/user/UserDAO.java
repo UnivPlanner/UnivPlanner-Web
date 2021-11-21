@@ -15,7 +15,7 @@ public class UserDAO {
 			
 			Class.forName("com.mysql.jdbc.Driver");
 
-
+			
 			 conn = DriverManager.getConnection(dbURL, id, pw);
 		}
 		
@@ -55,7 +55,24 @@ public class UserDAO {
 	public int join(User user) {
 		  String sql = "insert into user values(?, ?, ?, ?, ?)";
 		  try {
+			 if (conn == null) {
+					System.out.println("NULL");
+			 }
+		  
+			 else {
+					System.out.println("Not NULL");
+			 }
+			
 		    pstmt = conn.prepareStatement(sql);
+
+			 if (conn == null) {
+					System.out.println("NULL");
+			 }
+		  
+			 else {
+					System.out.println("Not NULL");
+			 }
+			 
 		    pstmt.setString(1, user.getUserID());
 		    pstmt.setString(2, user.getUserPassword());
 		    pstmt.setString(3, user.getUserName());
