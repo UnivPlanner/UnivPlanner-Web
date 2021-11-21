@@ -16,7 +16,7 @@ public class UserDAO {
 			Class.forName("com.mysql.jdbc.Driver");
 
 
-			Connection conn = DriverManager.getConnection(dbURL, id, pw);
+			 conn = DriverManager.getConnection(dbURL, id, pw);
 		}
 		
 		catch (Exception e) {
