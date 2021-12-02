@@ -13,7 +13,6 @@
 <link rel="stylesheet" href="css/bootstrap.css">
 <title>메인화면</title>
 <style TYPE="text/css">
-
              body {
              scrollbar-face-color: darkgray;
              scrollbar-highlight-color: darkgray;

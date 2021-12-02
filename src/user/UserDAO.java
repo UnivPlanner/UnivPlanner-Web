@@ -42,7 +42,6 @@ public class UserDAO {
 			}
 			
 			return -1; //아이디 없음
-			
 		}
 		
 		catch (Exception e) {
@@ -53,7 +52,7 @@ public class UserDAO {
 	}
 	
 	public int join(User user) {
-		  String sql = "insert into user values(?, ?, ?, ?, ?)";
+		  String sql = "insert into user values(?, ?, ?, ?)";
 		  try {
 			 if (conn == null) {
 					System.out.println("NULL");
@@ -76,8 +75,7 @@ public class UserDAO {
 		    pstmt.setString(1, user.getUserID());
 		    pstmt.setString(2, user.getUserPassword());
 		    pstmt.setString(3, user.getUserName());
-		    pstmt.setString(4, user.getUserGender());
-		    pstmt.setString(5, user.getUserEmail());
+		    pstmt.setString(4, user.getUserSchool());
 		    return pstmt.executeUpdate();
 		  }
 		  

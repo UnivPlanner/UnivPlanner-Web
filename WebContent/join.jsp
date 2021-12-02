@@ -7,87 +7,117 @@
 <!-- 화면 최적화 -->
 <meta name="viewport" content="width-device-width", initial-scale="1">
 <!-- 루트 폴더에 부트스트랩을 참조하는 링크 -->
-<link rel="stylesheet" href="css/bootstrap.css">
+<!-- Bootstrap CSS -->
+ <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+   integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+ <style>
+   body {
+     min-height: 100th;
+
+     background: -webkit-gradient(linear, left bottom, right top, from(#92b5db), to(#e3e3e3));
+     background: -webkit-linear-gradient(bottom left, #e3e3e3 0%, #e3e3e3 100%);
+     background: -moz-linear-gradient(bottom left, #e3e3e3 0%, #e3e3e3 100%);
+     background: -o-linear-gradient(bottom left, #e3e3e3 0%, #e3e3e3 100%);
+     background: linear-gradient(to top right, #e3e3e3 0%, #e3e3e3 100%);
+   }
+
+   .input-form {
+     max-width: 680px;
+
+     margin-top: 80px;
+     padding: 32px;
+
+     background: #fff;
+     -webkit-border-radius: 10px;
+     -moz-border-radius: 10px;
+     border-radius: 10px;
+     -webkit-box-shadow: 0 8px 20px 0 rgba(0, 0, 0, 0.15);
+     -moz-box-shadow: 0 8px 20px 0 rgba(0, 0, 0, 0.15);
+     box-shadow: 0 8px 20px 0 rgba(0, 0, 0, 0.15)
+   }
+ </style>
 <title>회원가입</title>
 </head>
 <body>
-	<nav class="navbar navbar-default"> <!-- 네비게이션 -->
-	
-		<div class="navbar-header"> 	<!-- 네비게이션 상단 부분 -->
-			<!-- 네비게이션 상단 박스 영역 -->
-			<button type="button" class="navbar-toggle collapsed"
-				data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"
-				aria-expanded="false">
-				<!-- 이 삼줄 버튼은 화면이 좁아지면 우측에 나타난다 -->
-				<span class="icon-bar"></span>
-				<span class="icon-bar"></span>
-				<span class="icon-bar"></span>
-			</button>
-			<!-- 상단 바에 제목이 나타나고 클릭하면 main 페이지로 이동한다 -->
-			<a class="navbar-brand" href="main.jsp">제대로 웹사이트</a>
-		</div>
-		
-		<!-- 게시판 제목 이름 옆에 나타나는 메뉴 영역 -->
-		<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-			<ul class="nav navbar-nav">
-				<li><a href="main.jsp">메인</a></li>
-				<li><a href="lmsLogin.jsp">LMS 로그인</a></li>
-				<li><a href="bbs.jsp">게시판</a></li>
-				<li><a href="https://lms.sungshin.ac.kr/ilos/main/main_form.acl">교육시스템</a></li>
-				<li><a href="https://portal.sungshin.ac.kr/sso/login.jsp?destination=/portal/ssu/stuMain">포탈시스템</a></li>
-			</ul>
-			<!-- 헤더 우측에 나타나는 드랍다운 영역 -->
-			<ul class="nav navbar-nav navbar-right">
-				<li class="dropdown">
-					<a href="#" class="dropdown-toggle"
-						data-toggle="dropdown" role="button" aria-haspopup="true"
-						aria-expanded="false">접속하기<span class="caret"></span></a>
-					<!-- 드랍다운 아이템 영역 -->	
-					<ul class="dropdown-menu">
-						<li class="active"><a href="login.jsp">로그인</a></li>
-						<li><a href="join.jsp">회원가입</a></li>
-					</ul>
-				</li>
-			</ul>
-		</div>
-	</nav>
-	
-	<!-- 회원가입 양식 -->
-	<div class="container">		<!-- 하나의 영역 생성 -->
-		<div class="col-lg-4">	<!-- 영역 크기 -->
-			<!-- 점보트론은 특정 컨텐츠, 정보를 두드러지게 하기 위한 큰 박스 -->
-			<div class="jumbotron" style="padding-top: 20px;">
-				<form method="post" action="joinAction.jsp">
-					<h3 style="text-align: center;">회원가입 화면</h3>
-					<div class="form-group">
-						<input type="text" class="form-control" placeholder="아이디" name="userID" maxlength="20">
-					</div>
-					<div class="form-group">
-						<input type="password" class="form-control" placeholder="비밀번호" name="userPassword" maxlength="20">
-					</div>
-					<div class="form-group">
-						<input type="text" class="form-control" placeholder="이름" name="userName" maxlength="20">
-					</div>
-					<div class="form-group" style="text-align: center;">
-						<div class="btn-group" data-toggle="buttons">
-							<label class="btn btn-primary active">
-								<input type="radio" name="userGender" autocomplete="off" value="남자" checked>남자
-							</label>
-							<label class="btn btn-primary active">
-								<input type="radio" name="userGender" autocomplete="off" value="여자" checked>여자
-							</label>
-						</div>
-					</div>
-					<div class="form-group">
-						<input type="email" class="form-control" placeholder="이메일" name="userEmail" maxlength="20">
-					</div>
-					<input type="submit" class="btn btn-primary form-control" value="회원가입">
-				</form>
-			</div>
-		</div>	
-	</div>
-	
-	<!-- 부트스트랩 참조 영역 -->
-	<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
-	<script src="js/bootstrap.js"></script>
+<!-- 회원가입 양식 -->
+<div class="container">
+    <div class="input-form-backgroud row">
+      <div class="input-form col-md-12 mx-auto">
+        <h4 class="mb-3">회원가입</h4>
+        <form method="post" action="joinAction.jsp" class="validation-form" novalidate>
+          <div class="row">
+            <div class="col-md-6 mb-3">
+              <label for="id">아이디</label>
+              <input type="text" class="form-control" name="userID" placeholder="" value="" required>
+              <div class="invalid-feedback">
+                아이디를 입력해주세요.
+              </div>
+            </div>
+            
+            <div class="col-md-6 mb-3">
+              <label for="password">비밀번호</label>
+              <input type="password" class="form-control" name="userPassword" placeholder="" value="" required>
+              <div class="invalid-feedback">
+                비밀번호를 입력해주세요.
+              </div>
+            </div>
+          </div>
+
+          <div class="mb-3">
+            <label for="name">이름</label>
+            <input type="text" class="form-control" name="userName" placeholder="이름" required>
+            <div class="invalid-feedback">
+              이름을 입력해주세요.
+            </div>
+          </div>
+          <div class="mb-3">
+            <label for="school">학교</label>
+            <select class="custom-select d-block w-100" name="userSchool">
+              <option value=""></option>
+              <option>성신여자대학교</option>
+              <option>한국외국어대학교</option>
+              <option>서강대학교</option>
+              <option>경북대학교</option>
+              <option>건국대학교</option>
+              <option>서울여자대학교</option>
+            </select>
+            <div class="invalid-feedback">
+              학교를 선택해주세요.
+            </div>
+          </div>
+          
+          <hr class="mb-4">
+          <div class="custom-control custom-checkbox">
+            <input type="checkbox" class="custom-control-input" id="aggrement" required>
+            <label class="custom-control-label" for="aggrement">개인정보 수집 및 이용에 동의합니다.</label>
+          </div>
+          <div class="mb-4"></div>
+          <button class="btn btn-primary btn-lg btn-block" style="background-color: #bb86fc; border:none;" type="submit" >가입 완료</button>
+        </form>
+      </div>
+    </div>
+    <footer class="my-3 text-center text-small">
+      <p class="mb-1">&copy; 2021 UnivPlanner</p>
+    </footer>
+  </div>
+  <script>
+  (function () {
+	  'use strict'
+	  // Fetch all the forms we want to apply custom Bootstrap validation styles to
+	  var forms = document.querySelectorAll('.validation-form')
+
+	  // Loop over them and prevent submission
+	  Array.prototype.slice.call(forms)
+	    .forEach(function (form) {
+	      form.addEventListener('submit', function (event) {
+	        if (!form.checkValidity()) {
+	          event.preventDefault()
+	          event.stopPropagation()
+	        }
+
+	        form.classList.add('was-validated')
+	      }, false)
+	    })
+	})()
+  </script>
 </body>
