@@ -22,7 +22,6 @@
              scrollbar-darkshadow-color: darkgray;
              scrollbar-track-color: #FFFFFF;
              scrollbar-arrow-color: darkgray;
-             width: 1000px;  
              margin: 0 auto;
              }
 
