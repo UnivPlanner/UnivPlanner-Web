@@ -8,8 +8,7 @@ create table user(
    userID varchar(20),  
    userPassword varchar(20),  
    userName varchar(20),  
-   userGender varchar(20),  
-   userEmail varchar(50),  
+   userSchool varchar(20),    
    primary key(userID)  
 )  
 charset = utf8;
