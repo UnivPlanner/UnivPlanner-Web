@@ -127,30 +127,40 @@ int intToday = Integer.parseInt(sdf.format(todayCal.getTime()));
 			userID = (String)session.getAttribute("userID");
 		}
 	%>
-	<nav class="navbar navbar-default" style="background-color:#ffffff;"> <!-- 네비게이션 -->
-		<div class="navbar-header"> 	<!-- 네비게이션 상단 부분 -->
-			<!-- 네비게이션 상단 박스 영역 -->
-			<button type="button" class="navbar-toggle collapsed"
-				data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"
-				aria-expanded="false">
-				<!-- 이 삼줄 버튼은 화면이 좁아지면 우측에 나타난다 -->
-				<span class="icon-bar"></span>
-				<span class="icon-bar"></span>
-				<span class="icon-bar"></span>
-			</button>
-			<!-- 상단 바에 제목이 나타나고 클릭하면 main 페이지로 이동한다 -->
-			<a class="navbar-brand" href="main.jsp">
-				<img src="logo.png" alt="Logo" style="width:80px; height:50px; align=top;">
-			</a>
-		</div>
-		<!-- 게시판 제목 이름 옆에 나타나는 메뉴 영역 -->
-		<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-			<ul class="nav navbar-nav">
-				<li><a href="lmsLogin.jsp">LMS 로그인</a></li>
+	
+	
+<nav class="navbar navbar-inverse navbar-main">
+  <div class="container-fluid">
+    <div class="row">
+      <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <a class="navbar-brand visible-xs" href="main.jsp">UnivPlanner</a>
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+    </div>
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse text-center" id="bs-example-navbar-collapse-1">
+     <div>
+      <ul class="nav navbar-nav navbar-left" style="padding-left: 250px; padding-right:20px;">
+	        <li class="active"><a href="main.jsp">Home<span class="sr-only">(current)</span></a></li>
+	        <li><a href="lmsLogin.jsp">LMS 로그인</a></li>
 				<li><a href="bbs.jsp">게시판</a></li>
-				<li><a href="https://lms.sungshin.ac.kr/ilos/main/main_form.acl">교육시스템</a></li>
-				<li><a href="https://portal.sungshin.ac.kr/sso/login.jsp?destination=/portal/ssu/stuMain">포탈시스템</a></li>
-			</ul>
+      </ul>
+     </div>
+     <div class="navbar-brand hidden-xs">
+        <a class="white-circle" href="main.jsp" style="position:absolute; left: 47%;">
+          <img class="logo img-circle" src="logo2.PNG" alt="Logo" >
+        </a>
+     </div>
+     <div >
+      <ul class="nav navbar-nav navbar-right" style="padding-left: 20px; padding-right:150px;">
+        <li><a href="https://lms.sungshin.ac.kr/ilos/main/main_form.acl">교육시스템</a></li>
+		<li><a href="https://portal.sungshin.ac.kr/sso/login.jsp?destination=/portal/ssu/stuMain">포탈시스템</a></li>
+		<li><a href="https://lib.sungshin.ac.kr/">중앙도서관</a></li>
 			<%
 				// 로그인 하지 않았을 때 보여지는 화면
 				if(userID == null){
@@ -187,31 +197,34 @@ int intToday = Integer.parseInt(sdf.format(todayCal.getTime()));
 			<%
 				}
 			%>
-    	</div>
-    </nav>             
-    <br>
+			</ul>
+    </div>
+    <!-- /.navbar-collapse -->
+    </div>
+  </div>
+  </div>
+  <!-- /.container-fluid -->
+</nav>        
 	<!-- 부트스트랩 참조 영역 -->
 	<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
 	<script src="js/bootstrap.js"></script>
-	<form name="calendarFrm" id="calendarFrm" action="" method="post">
-
-<DIV id="content" style="width:712px;">
-
-<!--날짜 네비게이션  -->
-
+<br>
+<br>
+<br>
+<br>	
+<br>
+<br>
+	<!--날짜 네비게이션  -->
+<form name="calendarFrm" id="calendarFrm" action="" method="post">
+<div id="content" style="width:712px; position:absolute; left: 55%; transform: translateX(-50%);">
 <table width="500" border="0" cellspacing="1" cellpadding="1" id="KOO" bgcolor="WHITE" style="border:1px solid WHITE">
-
 <tr>
-
 <td height="60">
-
        <table width="500" border="0" cellspacing="0" cellpadding="0">
-
        <tr>
              <td height="10">
              </td>
        </tr>
-
        <tr>
              <td align="center">
                     <a href="<c:url value='/main.jsp' />?year=<%=year-1%>&amp;month=<%=month%>" target="_self">
@@ -237,31 +250,19 @@ int intToday = Integer.parseInt(sdf.format(todayCal.getTime()));
                     &nbsp;&nbsp;
 
                     <%if(month < 11 ){ %>
-
                     <a href="<c:url value='/main.jsp' />?year=<%=year%>&amp;month=<%=month+1%>" target="_self">
 
                            <!-- 다음달 --><b>&gt;</b>
-
                     </a>
-
                     <%}else{%>
-
                            <b>&gt;</b>
-
                     <%} %>
-
                     <a href="<c:url value='/main.jsp' />?year=<%=year+1%>&amp;month=<%=month%>" target="_self">
-
                            <!-- 다음해 --><b>&gt;&gt;</b>
-
                     </a>
-
              </td>
-
        </tr>
-
        </table>
-
 </td>
 </tr>
 </table>

@@ -18,29 +18,40 @@
 			userID = (String)session.getAttribute("userID");
 		}
 	%>
-	<nav class="navbar navbar-default"> <!-- 네비게이션 -->
-		<div class="navbar-header"> 	<!-- 네비게이션 상단 부분 -->
-			<!-- 네비게이션 상단 박스 영역 -->
-			<button type="button" class="navbar-toggle collapsed"
-				data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"
-				aria-expanded="false">
-				<!-- 이 삼줄 버튼은 화면이 좁아지면 우측에 나타난다 -->
-				<span class="icon-bar"></span>
-				<span class="icon-bar"></span>
-				<span class="icon-bar"></span>
-			</button>
-			<!-- 상단 바에 제목이 나타나고 클릭하면 main 페이지로 이동한다 -->
-			<a class="navbar-brand" href="main.jsp">제대로 웹 사이트</a>
-		</div>
-		<!-- 게시판 제목 이름 옆에 나타나는 메뉴 영역 -->
-		<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-			<ul class="nav navbar-nav">
-				<li><a href="main.jsp">메인</a></li>
-				<li><a href="lmsLogin.jsp">LMS 로그인</a></li>
-				<li class="active"><a href="bbs.jsp">게시판</a></li>
-				<li><a href="https://lms.sungshin.ac.kr/ilos/main/main_form.acl">교육시스템</a></li>
-				<li><a href="https://portal.sungshin.ac.kr/sso/login.jsp?destination=/portal/ssu/stuMain">포탈시스템</a></li>
-			</ul>
+	
+	
+<nav class="navbar navbar-inverse navbar-main">
+  <div class="container-fluid">
+    <div class="row">
+      <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <a class="navbar-brand visible-xs" href="main.jsp">UnivPlanner</a>
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+    </div>
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse text-center" id="bs-example-navbar-collapse-1">
+     <div>
+      <ul class="nav navbar-nav navbar-left" style="padding-left: 250px; padding-right:20px;">
+	        <li class="active"><a href="main.jsp">Home<span class="sr-only">(current)</span></a></li>
+	        <li><a href="lmsLogin.jsp">LMS 로그인</a></li>
+				<li><a href="bbs.jsp">게시판</a></li>
+      </ul>
+     </div>
+     <div class="navbar-brand hidden-xs">
+        <a class="white-circle" href="main.jsp" style="position:absolute; left: 47%;">
+          <img class="logo img-circle" src="logo2.PNG" alt="Logo" >
+        </a>
+     </div>
+     <div >
+      <ul class="nav navbar-nav navbar-right" style="padding-left: 20px; padding-right:150px;">
+        <li><a href="https://lms.sungshin.ac.kr/ilos/main/main_form.acl">교육시스템</a></li>
+		<li><a href="https://portal.sungshin.ac.kr/sso/login.jsp?destination=/portal/ssu/stuMain">포탈시스템</a></li>
+		<li><a href="https://lib.sungshin.ac.kr/">중앙도서관</a></li>
 			<%
 				// 로그인 하지 않았을 때 보여지는 화면
 				if(userID == null){
@@ -77,10 +88,21 @@
 			<%
 				}
 			%>
-		</div>
-	</nav>
+			</ul>
+    </div>
+    <!-- /.navbar-collapse -->
+    </div>
+  </div>
+  </div>
+  <!-- /.container-fluid -->
+</nav> 
 	<!-- 네비게이션 영역 끝 -->
-	
+<br>
+<br>
+<br>
+<br>	
+<br>
+<br>
 	<!-- 게시판 글쓰기 양식 영역 시작 -->
 	<div class="container">
 		<div class="row">
