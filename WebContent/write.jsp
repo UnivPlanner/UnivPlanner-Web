@@ -123,7 +123,7 @@
 					</tbody>
 				</table>
 				<!-- 글쓰기 버튼 생성 -->
-				<input type="submit" class="btn btn-primary pull-right" value="글쓰기">
+				<input type="submit" class="btn btn-primary pull-right" value="글쓰기" style="background-color:#000000; border:none;">
 			</form>
 		</div>
 	</div>

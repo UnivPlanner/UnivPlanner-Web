@@ -168,7 +168,7 @@
 			%>
 			
 			<!-- 글쓰기 버튼 생성 -->
-			<a href="write.jsp" class="btn btn-primary pull-right">글쓰기</a>
+			<a href="write.jsp" class="btn btn-primary pull-right" style="background-color:#000000; border:none;">글쓰기</a>
 		</div>
 	</div>
 	<!-- 게시판 메인 페이지 영역 끝 -->
