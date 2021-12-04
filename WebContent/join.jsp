@@ -13,20 +13,16 @@
  <style>
    body {
      min-height: 100th;
-
      background: -webkit-gradient(linear, left bottom, right top, from(#92b5db), to(#e3e3e3));
      background: -webkit-linear-gradient(bottom left, #e3e3e3 0%, #e3e3e3 100%);
      background: -moz-linear-gradient(bottom left, #e3e3e3 0%, #e3e3e3 100%);
      background: -o-linear-gradient(bottom left, #e3e3e3 0%, #e3e3e3 100%);
      background: linear-gradient(to top right, #e3e3e3 0%, #e3e3e3 100%);
    }
-
    .input-form {
      max-width: 680px;
-
      margin-top: 80px;
      padding: 32px;
-
      background: #fff;
      -webkit-border-radius: 10px;
      -moz-border-radius: 10px;
@@ -105,7 +101,6 @@
 	  'use strict'
 	  // Fetch all the forms we want to apply custom Bootstrap validation styles to
 	  var forms = document.querySelectorAll('.validation-form')
-
 	  // Loop over them and prevent submission
 	  Array.prototype.slice.call(forms)
 	    .forEach(function (form) {
@@ -114,7 +109,6 @@
 	          event.preventDefault()
 	          event.stopPropagation()
 	        }
-
 	        form.classList.add('was-validated')
 	      }, false)
 	    })

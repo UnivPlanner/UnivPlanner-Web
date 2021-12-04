@@ -127,7 +127,7 @@ int intToday = Integer.parseInt(sdf.format(todayCal.getTime()));
 			userID = (String)session.getAttribute("userID");
 		}
 	%>
-	<nav class="navbar navbar-default"> <!-- 네비게이션 -->
+	<nav class="navbar navbar-default" style="background-color:#ffffff;"> <!-- 네비게이션 -->
 		<div class="navbar-header"> 	<!-- 네비게이션 상단 부분 -->
 			<!-- 네비게이션 상단 박스 영역 -->
 			<button type="button" class="navbar-toggle collapsed"
@@ -139,12 +139,13 @@ int intToday = Integer.parseInt(sdf.format(todayCal.getTime()));
 				<span class="icon-bar"></span>
 			</button>
 			<!-- 상단 바에 제목이 나타나고 클릭하면 main 페이지로 이동한다 -->
-			<a class="navbar-brand" href="main.jsp">제대로 웹 사이트</a>
+			<a class="navbar-brand" href="main.jsp">
+				<img src="logo.png" alt="Logo" style="width:80px; height:50px; align=top;">
+			</a>
 		</div>
 		<!-- 게시판 제목 이름 옆에 나타나는 메뉴 영역 -->
 		<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 			<ul class="nav navbar-nav">
-				<li class="active"><a href="main.jsp">메인</a></li>
 				<li><a href="lmsLogin.jsp">LMS 로그인</a></li>
 				<li><a href="bbs.jsp">게시판</a></li>
 				<li><a href="https://lms.sungshin.ac.kr/ilos/main/main_form.acl">교육시스템</a></li>
@@ -187,7 +188,8 @@ int intToday = Integer.parseInt(sdf.format(todayCal.getTime()));
 				}
 			%>
     	</div>
-    </nav>       
+    </nav>             
+    <br>
 	<!-- 부트스트랩 참조 영역 -->
 	<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
 	<script src="js/bootstrap.js"></script>
