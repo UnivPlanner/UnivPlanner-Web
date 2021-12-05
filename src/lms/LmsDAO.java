@@ -112,6 +112,7 @@ public class LmsDAO {
                         }
 
                         String innerAssignmentStr = "";
+                        
                         String innerAssignmentNumStr = in.readLine();	// inner lecture number
                         System.out.println("total assignment num: " + innerAssignmentNumStr);
 
@@ -137,25 +138,35 @@ public class LmsDAO {
                                 innerAssignmentStr += (assignmentPeriod + "\n");
                                 System.out.println("inner assign period:" + assignmentPeriod);
                                 realAssignNum++;
+                                
+//                                System.out.println("====================");
+//                                FindEncoding.findEncoding(assignmentName);
+//                                System.out.println("====================");
+                                
+
+
                             }
 
                             innerAssignmentStr = realAssignNum + "\n" + innerAssignmentStr;
+
                         }
 
                         else {
                             innerAssignmentStr += "0\n";
                         }
 
+
                         lecturePercentVec.add(innerLecturePercentStr);
                         lectureAssignmentVec.add(innerAssignmentStr);
-                    }
-
+                    } 
                     String realLectureNumStr = in.readLine();	// inner lecture number
                     System.out.println("Real Lecture Num" + realLectureNumStr);
                     System.out.println("lectureNameVec" + lectureNameVec.size() + "");
                     System.out.println("lecturePercentVec" + lecturePercentVec.size() + "");
                     System.out.println("lectureAssignmentVec" + lectureAssignmentVec.size() + "");
+
                 }
+                
 
                 else {
                     isLoginSuccess = false;
@@ -169,4 +180,5 @@ public class LmsDAO {
             }
         }
     }
+	
 }
