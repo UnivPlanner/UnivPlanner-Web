@@ -148,6 +148,7 @@ int intToday = Integer.parseInt(sdf.format(todayCal.getTime()));
      <div>
       <ul class="nav navbar-nav navbar-left" style="padding-left: 250px; padding-right:20px;">
 	        <li class="active"><a href="main.jsp">Home<span class="sr-only">(current)</span></a></li>
+	        <li><a href="lmsLogin.jsp">Lms 로그인</a></li>
 			<li><a href="bbs.jsp">스터디 모집</a></li>
       </ul>
      </div>
