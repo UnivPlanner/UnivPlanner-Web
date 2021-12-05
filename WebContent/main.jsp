@@ -11,6 +11,7 @@
 <meta name="viewport" content="width-device-width", initial-scale="1">
 <!-- 루트 폴더에 부트스트랩을 참조하는 링크 -->
 <link rel="stylesheet" href="css/bootstrap.css">
+<link rel="stylesheet" href="css/custom.css">
 <title>메인화면</title>
 <style TYPE="text/css">
              body {
@@ -147,8 +148,7 @@ int intToday = Integer.parseInt(sdf.format(todayCal.getTime()));
      <div>
       <ul class="nav navbar-nav navbar-left" style="padding-left: 250px; padding-right:20px;">
 	        <li class="active"><a href="main.jsp">Home<span class="sr-only">(current)</span></a></li>
-	        <li><a href="lmsLogin.jsp">LMS 로그인</a></li>
-				<li><a href="bbs.jsp">스터디 모집</a></li>
+			<li><a href="bbs.jsp">스터디 모집</a></li>
       </ul>
      </div>
      <div class="navbar-brand hidden-xs">

@@ -26,9 +26,9 @@ public class LmsDAO {
 	}
 	
 	//�α��� ����
-	public int login(String userID, String userPassword) {
+	public int login(String lmsID, String userPassword) {
 		try {
-			idText = userID;
+			idText = lmsID;
 			pwText = userPassword;
 			
 			ClientThread thread = new ClientThread();
