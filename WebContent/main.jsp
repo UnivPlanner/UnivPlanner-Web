@@ -232,6 +232,7 @@ select {
 									System.out.println("In main after login ==========");
 									System.out.println("size : " + LmsDAO.lectureNameVec);
 									System.out.println("size : " + LmsDAO.lecturePercentVec);
+									
 
 							%>
 							<!-- 헤더 우측에 나타나는 드랍다운 영역 -->
