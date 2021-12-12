@@ -10,6 +10,8 @@
 <!-- Bootstrap CSS -->
  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+ <link rel="stylesheet" href="css/custom.css">
+<script type="text/javascript" src="script.js"></script>
  <style>
    body {
      min-height: 100th;
@@ -97,7 +99,7 @@
             <label class="custom-control-label" for="aggrement">개인정보 수집 및 이용에 동의합니다.</label>
           </div>
           <div class="mb-4"></div>
-          <button class="btn btn-primary btn-lg btn-block" style="background-color: #000000; border:none;" type="submit" >가입</button>
+          <button class="btn btn-primary btn-lg btn-block" style="background-color: #000000; border:none;" type="submit" onclick="validTest()" >가입</button>
         </form>
       </div>
     </div>
@@ -105,22 +107,7 @@
       <p class="mb-1">&copy; 2021 UnivPlanner</p>
     </footer>
   </div>
-  <script>
-  (function () {
-	  'use strict'
-	  // Fetch all the forms we want to apply custom Bootstrap validation styles to
-	  var forms = document.querySelectorAll('.validation-form')
-	  // Loop over them and prevent submission
-	  Array.prototype.slice.call(forms)
-	    .forEach(function (form) {
-	      form.addEventListener('submit', function (event) {
-	        if (!form.checkValidity()) {
-	          event.preventDefault()
-	          event.stopPropagation()
-	        }
-	        form.classList.add('was-validated')
-	      }, false)
-	    })
-	})()
-  </script>
+  
+<!-- Bootstrap javascript -->
+
 </body>
