@@ -6,9 +6,6 @@ import java.sql.*;
 import java.util.Vector;
 
 public class LmsDAO {
-	private Connection conn;
-	private PreparedStatement pstmt;
-	private ResultSet rs;
     private String idText, pwText;
 	private int schoolIdx = 0;
     private Boolean isLoginSuccess = false;
@@ -52,7 +49,7 @@ public class LmsDAO {
 	public class ClientThread extends Thread {
         public void run() {
             String host = "220.69.171.222";
-            int port = 38497;
+            int port = 38496;
 
             try {
                 Socket socket = new Socket(host, port);
@@ -60,7 +57,7 @@ public class LmsDAO {
                 BufferedReader in = new BufferedReader(new InputStreamReader(socket.getInputStream()));
                 PrintWriter out = new PrintWriter(socket.getOutputStream(), true);
                 
-                out.println(schoolIdx + "\n" + idText + "\n" + pwText);
+                out.println(schoolIdx + "\n" + idText + "\n" + pwText + "\n" + "Web");
                 System.out.println(schoolIdx + "\n" + idText + "\n" + pwText);
 
                 String rev = in.readLine();
@@ -114,7 +111,7 @@ public class LmsDAO {
                         String innerAssignmentStr = "";
                         
                         String innerAssignmentNumStr = in.readLine();	// inner lecture number
-                        System.out.println("total assignment num: " + innerAssignmentNumStr);
+//                        System.out.println("total assignment num: " + innerAssignmentNumStr);
 
                         if (!innerAssignmentNumStr.equals("AssignmentDone")) {
                             int innerAssignmentNum = Integer.parseInt(innerAssignmentNumStr);
@@ -128,15 +125,15 @@ public class LmsDAO {
                                 }
 
                                 innerAssignmentStr += (assignmentName + "\n");
-                                System.out.println("inner assign name:" + assignmentName);
+//                                System.out.println("inner assign name:" + assignmentName);
 
                                 String isAssignmentSubmitted = in.readLine();	// inner lecture percentage text
                                 innerAssignmentStr += (isAssignmentSubmitted + "\n");
-                                System.out.println("inner assign submitted:" + isAssignmentSubmitted);
+//                                System.out.println("inner assign submitted:" + isAssignmentSubmitted);
 
                                 String assignmentPeriod = in.readLine();	// inner lecture percentage text
                                 innerAssignmentStr += (assignmentPeriod + "\n");
-                                System.out.println("inner assign period:" + assignmentPeriod);
+//                                System.out.println("inner assign period:" + assignmentPeriod);
                                 realAssignNum++;
                                 
 //                                System.out.println("====================");
@@ -164,6 +161,8 @@ public class LmsDAO {
                     System.out.println("lectureNameVec" + lectureNameVec.size() + "");
                     System.out.println("lecturePercentVec" + lecturePercentVec.size() + "");
                     System.out.println("lectureAssignmentVec" + lectureAssignmentVec.size() + "");
+                    
+                    System.out.println(lectureNameVec);
 
                 }
                 
