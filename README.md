@@ -13,6 +13,10 @@ create table user(
 )  
 charset = utf8;
 
+
+---
+
+
 create table bbs(  
    bbsID int,  
    bbsTitle varchar(50),  
