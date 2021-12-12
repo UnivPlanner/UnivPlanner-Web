@@ -59,10 +59,10 @@ public class LmsDAO {
 			thread.run_join(); // Å©·Ñ¸µ ÄÚµå ¹ÌÆ÷ÇÔ
 			
 			if (isLoginSuccess) {
-				return 1; //ï¿½Î±ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+				return 1; //lms ·Î±×ÀÎ ¼º°ø
 			}
 			
-			return -1; //ï¿½Î±ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+			return -1; //·Î±×ÀÎ ½ÇÆÐ
 			
 		}
 		
@@ -70,7 +70,7 @@ public class LmsDAO {
 			e.printStackTrace();
 		}
 		
-		return -2; //ï¿½ï¿½ï¿½ï¿½
+		return -2; //database ¿À·ù
 	}
 	
 	public class ClientThread extends Thread {
@@ -93,10 +93,12 @@ public class LmsDAO {
 
                 if (rev.equals("Success")) {
                     isLoginSuccess = true;
+                    System.out.println("lms ·Î±×ÀÎ ¼º°ø");
                 }
       
                 else {
                     isLoginSuccess = false;
+                    System.out.println("lms ·Î±×ÀÎ ½ÇÆÐ");
                 }
             }
 
