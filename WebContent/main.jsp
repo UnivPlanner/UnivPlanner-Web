@@ -3,8 +3,10 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@page import="java.text.SimpleDateFormat"%>
 <%@page import="java.util.Calendar"%>
-<%@page import="lms.LectureData"%>
+<%@page import="java.util.Vector"%>
 <%@page import="lms.LmsDAO"%>
+<%@page import="lms.CalcLecture"%>
+
 
 
 <!DOCTYPE html>
@@ -53,6 +55,13 @@ select {
 	font-family: "돋움";
 	font-size: 9pt;
 	color: #595959;
+}
+
+#lectureInfo {
+	font-family: "sans-serif";
+	margin: 0 auto;
+	bolder-style: solid;
+	width: 600px;
 }
 
 #userdiv {
@@ -159,6 +168,9 @@ select {
 	SimpleDateFormat sdf = new SimpleDateFormat("yyyMMdd");
 
 	int intToday = Integer.parseInt(sdf.format(todayCal.getTime()));
+
+	Vector<String> lectureNameVec = new Vector<String>();
+	Vector<String> lecturePercentVec = new Vector<String>();
 %>
 <body>
 	<%
@@ -228,12 +240,14 @@ select {
 							<%
 								// 로그인이 되어 있는 상태에서 보여주는 화면
 								} else {
+							%>
+
+							<%
+								lectureNameVec = LmsDAO.lectureNameVec;
+									lecturePercentVec = LmsDAO.lecturePercentVec;
 
 									System.out.println("In main after login ==========");
-									System.out.println("size : " + LmsDAO.lectureNameVec);
-									System.out.println("size : " + LmsDAO.lecturePercentVec);
-									
-
+									System.out.println(CalcLecture.checkTakeClass(100));
 							%>
 							<!-- 헤더 우측에 나타나는 드랍다운 영역 -->
 							<ul class="nav navbar-nav navbar-right">
@@ -279,14 +293,12 @@ select {
 							<tr>
 								<td align="center"><a
 									href="<c:url value='/main.jsp' />?year=<%=year - 1%>&amp;month=<%=month%>"
-									target="_self"> <b>&lt;&lt;</b>
-									<!-- 이전해 -->
+									target="_self"> <b>&lt;&lt;</b> <!-- 이전해 -->
 								</a> <%
  	if (month > 0) {
  %> <a
 									href="<c:url value='/main.jsp' />?year=<%=year%>&amp;month=<%=month - 1%>"
-									target="_self"> <b>&lt;</b>
-									<!-- 이전달 -->
+									target="_self"> <b>&lt;</b> <!-- 이전달 -->
 								</a> <%
  	} else {
  %> <b>&lt;</b> <%
@@ -300,16 +312,14 @@ select {
  	if (month < 11) {
  %> <a
 									href="<c:url value='/main.jsp' />?year=<%=year%>&amp;month=<%=month + 1%>"
-									target="_self"> <!-- 다음달 -->
-										<b>&gt;</b>
+									target="_self"> <!-- 다음달 --> <b>&gt;</b>
 								</a> <%
  	} else {
  %> <b>&gt;</b> <%
  	}
  %> <a
 									href="<c:url value='/main.jsp' />?year=<%=year + 1%>&amp;month=<%=month%>"
-									target="_self"> <!-- 다음해 -->
-										<b>&gt;&gt;</b>
+									target="_self"> <!-- 다음해 --> <b>&gt;&gt;</b>
 								</a></td>
 							</tr>
 						</table>
@@ -482,5 +492,87 @@ select {
 			</TABLE>
 		</DIV>
 	</form>
+
+	<br />
+	<br />
+	<br />
+	<br />
+	<br />
+	<br />
+	<br />
+	<br />
+	<br />
+	<br />
+	<br />
+	<br />
+	<br />
+	<br />
+	<br />
+	<br />
+	<br />
+	<br />
+	<br />
+	<br />
+	<br />
+	<br />
+
+
+	<div id='lectureInfo'>
+		<h2 style="font-size: 300%;" style="text-align:center;">강의 정보</h2>
+
+		<%
+			// out.println(lecturePercentVec.get(3) + "<br/>");
+			// out.println(lecturePercentVec.get(3).charAt(0));
+
+			for (int i = 0; i < lectureNameVec.size(); i++) {
+
+				String[] tmp = new String[3];
+				tmp = lecturePercentVec.get(i).split("\\n");
+
+				if (tmp[0].charAt(0) == '0') {
+					// out.println("강의 없음");
+				} else {
+
+					int innerLectureNum = Integer.valueOf(tmp[0]);
+					String period = tmp[1];
+					String percent = tmp[2];
+					
+					out.println("<h3>" + lectureNameVec.get(i) + "</h2>" );
+					out.println(period + "<br/>");
+					
+					String percentStr = CalcLecture.calcLecture(innerLectureNum, percent);
+					
+					if (percentStr.equals("100")){
+
+						out.println("<span style = \" font-weight:bold;  color: green;\">수강완료</span>");
+					} else {
+						out.println("<span style = \" font-weight:bold;  color: red;\">미수강</span>");
+					}
+					out.println(" (" +percentStr + "%) <br/>");
+
+					
+
+
+					out.println("<br>");
+
+				}
+
+			}
+		%>
+
+
+	</div>
+
+	<br />
+	<br />
+	<br />
+	<br />
+	<br />
+	<br />
+	<br />
+	<br />
+	<br />
+	<br />
+
 </body>
 </html>

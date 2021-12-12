@@ -25,6 +25,31 @@ public class CalcLecture {
     }
     
     
+    public static String checkTakeClass(int percent) {
+    	if (percent == 100)
+    		return "수강완료";
+    	else
+    		return "미수강";
+    }
+    
+    public static String calcLecture(int cnt, String s) {
+    	
+    	System.out.println(s);
+    	String[] num = s.split("% ");
+    	int sum = 0;
+
+    	for (int i = 0 ; i< cnt; i++) {
+    		sum += Integer.valueOf(num[i]); 
+    	}
+    	
+    	int avg = sum/cnt;
+    	
+    	String rtn = String.valueOf(avg);
+    	System.out.println(rtn);
+    	
+    	return rtn;
+    }
+    
     
     
     

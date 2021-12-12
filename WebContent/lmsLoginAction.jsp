@@ -1,12 +1,10 @@
 <%@page import="java.io.PrintWriter"%>
 <%@page import="lms.LmsDAO"%>
 <%@page import="user.UserDAO"%>
-<%@page import="lms.LectureData"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <% request.setCharacterEncoding("utf-8"); %>
 <jsp:useBean id="lms" class="lms.Lms" scope="page" />
-<jsp:useBean id="LectureData" class="lms.LectureData" scope="page" />
 <jsp:setProperty name="lms" property="userID" />
 <jsp:setProperty name="lms" property="userPassword" />
 <!DOCTYPE html>
