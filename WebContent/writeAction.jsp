@@ -35,6 +35,8 @@
 				script.println("history.back()");
 				script.println("</script>");
 			}else{
+				System.out.println(bbs.getBbsTitle());
+				System.out.println(bbs.getBbsContent());
 				// 정상적으로 입력이 되었다면 글쓰기 로직을 수행한다
 				BbsDAO bbsDAO = new BbsDAO();
 				int result = bbsDAO.write(bbs.getBbsTitle(), userID, bbs.getBbsContent());

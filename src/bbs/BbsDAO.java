@@ -14,7 +14,7 @@ public class BbsDAO {
 	//기본 생성자
 	public BbsDAO() {
 		try {
-			String dbURL = "jdbc:mysql://localhost:3306/BBS?serverTimeZone=UTC";
+			String dbURL = "jdbc:mysql://localhost:3306/BBS?useUnicode=true&characterEncoding=UTF-8&serverTimeZone=UTC";
 			String id = "root";
 			String pw = "1234";  
 			Class.forName("com.mysql.jdbc.Driver");
